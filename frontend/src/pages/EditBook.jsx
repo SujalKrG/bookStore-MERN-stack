@@ -4,6 +4,8 @@ import Spinner from "../components/Spinner";
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 const EditBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -13,7 +15,7 @@ const EditBook = () => {
   const { id } = useParams();
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`${BASE_URL}/books/${id}`)
       .then((response) => {
         setAuthor(response.data.author);
         setTitle(response.data.title);
@@ -24,7 +26,7 @@ const EditBook = () => {
         alert("An error occured. Please check console");
         console.log(error);
       })
-  }, [])
+  }, [id])
   const handleEditBook = () => {
     const data = {
       title,

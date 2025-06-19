@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 const ShowBooks = () => {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);
@@ -12,7 +14,7 @@ const ShowBooks = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5555/books/${id}`)
+      .get(`${BASE_URL}/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);

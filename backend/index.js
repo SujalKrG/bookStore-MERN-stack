@@ -16,28 +16,31 @@ app.use(express.json());
 
 //Option 2: Allow custom origins
 app.use(
-    cors({
-        origin: "https://book-store-mern-stack-fzx9bb53l-sujal-kumar-ghoshs-projects.vercel.app/",
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type']
-    })
-)
+  cors({
+    origin: [
+      "https://book-store-mern-stack-sujal-kumar-ghoshs-projects.vercel.app/",
+      "https://book-store-mern-stack-xi.vercel.app/",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 
-app.get('/', (request, response) => {
-    console.log("Root route hit");
-    return response.status(234).send('Welcome to MERN Stack Tutorial')
+app.get("/", (request, response) => {
+  console.log("Root route hit");
+  return response.status(234).send("Welcome to MERN Stack Tutorial");
 });
 
-app.use('/books', booksRoute);
+app.use("/books", booksRoute);
 
 mongoose
-    .connect(mongoDBURL)
-    .then(() => {
-        console.log("DB connected");
-        app.listen(PORT, ()=>{
-        console.log(`App listening to port: ${PORT}`)
-        });
-    })
-    .catch((error) => {
-        console.log(error);
+  .connect(mongoDBURL)
+  .then(() => {
+    console.log("DB connected");
+    app.listen(PORT, () => {
+      console.log(`App listening to port: ${PORT}`);
     });
+  })
+  .catch((error) => {
+    console.log(error);
+  });

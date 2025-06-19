@@ -12,16 +12,16 @@ app.use(express.json());
 
 //Middleware for handling cors policy
 //Option 1: Allow all origins with default cors (*)
-app.use(cors());
+// app.use(cors());
 
 //Option 2: Allow custom origins
-// app.use(
-//     cors({
-//         origin: "http://localhost:5555",
-//         methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//         allowedHeaders: ['Content-Type']
-//     })
-// )
+app.use(
+    cors({
+        origin: "https://book-store-mern-stack-fzx9bb53l-sujal-kumar-ghoshs-projects.vercel.app/",
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        allowedHeaders: ['Content-Type']
+    })
+)
 
 app.get('/', (request, response) => {
     console.log("Root route hit");

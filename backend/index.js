@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://book-store-mern-stack-sujal-kumar-ghoshs-projects.vercel.app/",
-      "https://book-store-mern-stack-xi.vercel.app/",
+      "https://book-store-mern-stack-sujal-kumar-ghoshs-projects.vercel.app",
+      "https://book-store-mern-stack-xi.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],

@@ -20,6 +20,7 @@ app.use(
     origin: [
       "https://book-store-mern-stack-sujal-kumar-ghoshs-projects.vercel.app",
       "https://book-store-mern-stack-xi.vercel.app",
+      "http://localhost:5173",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],

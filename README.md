@@ -95,12 +95,6 @@ If you find a bug or want to improve something, feel free to open an issue or PR
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 ## 🙌 Acknowledgments
 
 - Huge thanks to the open-source community
